@@ -1,0 +1,53 @@
+{
+  "name": "feed-api",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc -p .",
+    "start": "export NODE_ENV=development && node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start:watch": "nodemon"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "main": "lib/index.js",
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  },
+  "dependencies": {
+    "@types/busboy": "^0.2.3",
+    "body-parser": "^1.19.0",
+    "busboy": "^0.3.1",
+    "config": "^3.3.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-status": "^1.4.2",
+    "lodash": "^4.17.20",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.36",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.7",
+    "@types/lodash": "^4.14.167",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.11.2",
+    "eslint": "^7.10.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "tslint": "^5.12.0",
+    "typescript": "^3.8.0"
+  },
+  "private": true
+}
